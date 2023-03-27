@@ -16,7 +16,7 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay,classificat
 df_data = pd.read_csv('C:\\Users\\Julia\\Desktop\\Multimedia\\Technologie multimedialne\\Machine earning\\Machine-Learning\\cleaned_data.csv', sep = ',')
 print(df_data)
 
-exclude_filter = ~df_data.columns.isin(['Unnamed: 0' 'Credit_Score'])
+exclude_filter = ~df_data.columns.isin(['Unnamed: 0','Credit_Score'])
 pca = PCA().fit(df_data.loc[:, exclude_filter])
 plt.plot(np.cumsum(pca.explained_variance_ratio_))
 plt.xlabel('number of components')
@@ -48,16 +48,17 @@ cm = confusion_matrix(y_test,y_pred)
 clas = y_test.unique()
 
 ConfusionMatrixDisplay(cm).plot()
+plt.show()
+
 rep = classification_report(y_test, y_pred)
 print(rep)
 print(cm)
 
-# Accuracy = ((12356)/(12356+6780+3912))
-# Precision_1 = (0/(0+0+0))
-# Recall_1 =((0)/(0+6780+0))
+Accuracy = ((2488+10037+476)/(4186+106+504+1815+70+3366+2488+10037+476))
 
-# Precision_2 = (12356)/(12356+6780+3912)
-# Recall_2 = (12356)/(0+12356+0)
 
-# Precision_3 = (0/(0+0+0))
-# Recall_3 =((0)/(0+3912+0))
+Precision_1 = (10037)/(4186+10037+3366)
+Recall_1 = (10037)/(18150+10037+504)
+
+print(Precision_1)
+print(Recall_1)
