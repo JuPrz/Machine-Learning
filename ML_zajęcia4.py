@@ -50,5 +50,14 @@ clas = y_test.unique()
 ConfusionMatrixDisplay(cm).plot()
 rep = classification_report(y_test, y_pred)
 print(rep)
+print(cm)
 
-# precision = 
+Accuracy = ((12356)/(12356+6780+3912))
+Precision_1 = (0/(0+0+0))
+Recall_1 =((0)/(0+6780+0))
+
+Precision_2 = (12356)/(12356+6780+3912)
+Recall_2 = (12356)/(0+12356+0)
+
+Precision_3 = (0/(0+0+0))
+Recall_3 =((0)/(0+3912+0))
