@@ -22,7 +22,7 @@ plt.plot(np.cumsum(pca.explained_variance_ratio_))
 plt.xlabel('number of components')
 plt.ylabel('cumulative explained variance')
 plt.gcf().set_size_inches(7, 5)
-plt.show()
+#plt.show()
 
 
 pca = PCA(svd_solver='full', n_components=0.95)
@@ -35,3 +35,20 @@ print(principal_df.head())
 X_train, X_test, y_train, y_test = train_test_split(principal_df, df_data['Credit_Score'], test_size=0.33, random_state=42)
 print(X_train.shape)
 #kod
+
+# model regresji 
+
+clf = LogisticRegression(random_state=100)
+clf.fit(X_train, y_train) #<- supervised learning
+print(clf.predict(X_test))
+# predict_proba(X)
+y_pred = clf.predict(X_test)
+
+cm = confusion_matrix(y_test,y_pred)
+clas = y_test.unique()
+
+ConfusionMatrixDisplay(cm).plot()
+rep = classification_report(y_test, y_pred)
+print(rep)
+
+# precision = 
