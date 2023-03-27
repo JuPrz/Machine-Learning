@@ -8,8 +8,7 @@ from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
-LogisticRegression(random_state=100)  # pierwsze losowanie zapmiętanie 
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay,classification_report confusion_matrix(<prawdziwe y>,<przewidziane y>)
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay,classification_report 
 
 
 
