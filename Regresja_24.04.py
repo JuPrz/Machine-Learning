@@ -69,15 +69,3 @@ scores = tabulate(table, headers='firstrow')
 with open('score_table.txt', 'w') as f:
     f.write(scores)
 
-#Wykres z wynikami
-plt.figure(figsize=(10, 5))
-plt.plot(table, scores='Train Score')
-plt.xlabel('Model')
-plt.ylabel('Score')
-plt.title('Model Comparison')
-plt.legend()
-plt.show()
-
-#Tabela wyników
-results = pd.DataFrame({'Model': table,
-                        'Train Score': scores})
